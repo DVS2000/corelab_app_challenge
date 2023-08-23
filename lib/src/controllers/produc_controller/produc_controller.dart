@@ -12,8 +12,10 @@ abstract class ProductControllerBase with Store {
   List<String> searchsRecent = [];
 
   void search({required String text}) {
-    produtcts = produtcts.where((product) => product.name.contains(text)).toList();
-    searchsRecent.add(text);
+    if (text.trim().isNotEmpty) {
+      produtcts = produtcts.where((product) => product.name.contains(text)).toList();
+      searchsRecent.add(text);
+    }
   }
 
   removeItensSearchRecent({required int index}) {

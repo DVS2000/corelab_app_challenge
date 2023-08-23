@@ -11,6 +11,7 @@ class ConstsUtils {
 
   // COLORS
   static const colorPrimary   = Color(0xff00B4CC);
+  static const colorCinza06   = Color(0xff7C9094);
 
   // IMAGES
   static const imgCondicionador = "assets/imgs/condicionador.png";
@@ -25,5 +26,14 @@ class ConstsUtils {
   static const imgProd7         = "assets/imgs/touca-descartavel-branca-dental-cremer-357646-01.jpg";
   static const imgProd8         = "assets/imgs/embalagem-rolete-algodao-ssplus-388701.jpg";
   static const imgProd9         = "assets/imgs/sugador-descartavel-colorido-allprime-dc25705.jpg";
+
+  // ICONS
+  static const iconHome         = "assets/imgs/icons/home.png";
+  static const iconHomeOn       = "assets/imgs/icons/home_on.png";
+  static const iconCategory     = "assets/imgs/icons/category.png";
+  static const iconCategoryOn   = "assets/imgs/icons/category_on.png";
+  static const iconAdd          = "assets/imgs/icons/add.png";
+  static const iconFavorite     = "assets/imgs/icons/favorite.png";
+  static const iconUser         = "assets/imgs/icons/user.png";
   
 }
