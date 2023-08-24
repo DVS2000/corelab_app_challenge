@@ -7,7 +7,7 @@ class MenuIemComponent extends StatelessWidget {
   final MenuEntity item;
   final void Function()? onTap;
   final bool isSelected;
-  
+
   const MenuIemComponent({
     super.key, 
     required this.item, 
@@ -26,7 +26,7 @@ class MenuIemComponent extends StatelessWidget {
           children: [
             Image.asset(
               isSelected ? item.iconOn : item.icon,
-              height: context.sizedDevice.height / 20,
+              height: context.sizedDevice.height / 25,
             ),
             Text(
               item.title,
@@ -35,7 +35,7 @@ class MenuIemComponent extends StatelessWidget {
                 color: isSelected
                   ? ConstsUtils.colorPrimary
                   : ConstsUtils.colorCinza06,
-                fontSize: context.sizedDevice.height / 68,
+                fontSize: context.sizedDevice.height / 73,
                 fontFamily: ConstsUtils.fontMedium,
                 fontWeight: FontWeight.w100
               ),

@@ -25,6 +25,22 @@ mixin _$ProductController on ProductControllerBase, Store {
     });
   }
 
+  late final _$productsFoundAtom =
+      Atom(name: 'ProductControllerBase.productsFound', context: context);
+
+  @override
+  List<ProductEntity> get productsFound {
+    _$productsFoundAtom.reportRead();
+    return super.productsFound;
+  }
+
+  @override
+  set productsFound(List<ProductEntity> value) {
+    _$productsFoundAtom.reportWrite(value, super.productsFound, () {
+      super.productsFound = value;
+    });
+  }
+
   late final _$searchsRecentAtom =
       Atom(name: 'ProductControllerBase.searchsRecent', context: context);
 
@@ -45,6 +61,7 @@ mixin _$ProductController on ProductControllerBase, Store {
   String toString() {
     return '''
 produtcts: ${produtcts},
+productsFound: ${productsFound},
 searchsRecent: ${searchsRecent}
     ''';
   }

@@ -17,8 +17,8 @@ class ProductEntity {
     required this.isNew
   });
 
-  double getDiscount() {
-    return percentDiscount == null ? 0 : ((percentDiscount ?? 0) / 100) * price; 
+  String getDiscount() {
+    return (price - (percentDiscount == null ? 0 : ((percentDiscount ?? 0) / 100) * price)).toStringAsFixed(2); 
   }
 }
 
@@ -82,7 +82,7 @@ List<ProductEntity> productsFakes = [
       imgSrc: ConstsUtils.imgProd6,
       price: 17.99, 
       percentDiscount: 1,
-      numberInstallments: 1, 
+      numberInstallments: 2, 
       isNew: false
     ),
 
