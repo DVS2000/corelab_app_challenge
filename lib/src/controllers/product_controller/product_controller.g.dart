@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'produc_controller.dart';
+part of 'product_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -57,12 +57,80 @@ mixin _$ProductController on ProductControllerBase, Store {
     });
   }
 
+  late final _$isSearchingAtom =
+      Atom(name: 'ProductControllerBase.isSearching', context: context);
+
+  @override
+  bool get isSearching {
+    _$isSearchingAtom.reportRead();
+    return super.isSearching;
+  }
+
+  @override
+  set isSearching(bool value) {
+    _$isSearchingAtom.reportWrite(value, super.isSearching, () {
+      super.isSearching = value;
+    });
+  }
+
+  late final _$txtSearchAtom =
+      Atom(name: 'ProductControllerBase.txtSearch', context: context);
+
+  @override
+  TextEditingController get txtSearch {
+    _$txtSearchAtom.reportRead();
+    return super.txtSearch;
+  }
+
+  @override
+  set txtSearch(TextEditingController value) {
+    _$txtSearchAtom.reportWrite(value, super.txtSearch, () {
+      super.txtSearch = value;
+    });
+  }
+
+  late final _$focusTextFieldAtom =
+      Atom(name: 'ProductControllerBase.focusTextField', context: context);
+
+  @override
+  FocusNode get focusTextField {
+    _$focusTextFieldAtom.reportRead();
+    return super.focusTextField;
+  }
+
+  @override
+  set focusTextField(FocusNode value) {
+    _$focusTextFieldAtom.reportWrite(value, super.focusTextField, () {
+      super.focusTextField = value;
+    });
+  }
+
+  late final _$txtFiledHasFocusAtom =
+      Atom(name: 'ProductControllerBase.txtFiledHasFocus', context: context);
+
+  @override
+  bool get txtFiledHasFocus {
+    _$txtFiledHasFocusAtom.reportRead();
+    return super.txtFiledHasFocus;
+  }
+
+  @override
+  set txtFiledHasFocus(bool value) {
+    _$txtFiledHasFocusAtom.reportWrite(value, super.txtFiledHasFocus, () {
+      super.txtFiledHasFocus = value;
+    });
+  }
+
   @override
   String toString() {
     return '''
 produtcts: ${produtcts},
 productsFound: ${productsFound},
-searchsRecent: ${searchsRecent}
+searchsRecent: ${searchsRecent},
+isSearching: ${isSearching},
+txtSearch: ${txtSearch},
+focusTextField: ${focusTextField},
+txtFiledHasFocus: ${txtFiledHasFocus}
     ''';
   }
 }

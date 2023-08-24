@@ -1,4 +1,4 @@
-import 'package:corelab_app_challenge/src/controllers/produc_controller/produc_controller.dart';
+import 'package:corelab_app_challenge/src/controllers/product_controller/product_controller.dart';
 import 'package:corelab_app_challenge/src/views/utils/consts_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class SearchComponent extends StatefulWidget {
 
 class _SearchComponentState extends State<SearchComponent> {
 
-  final focusTextField = FocusNode();
+  
   bool showIconBack = false;
   String searchText = "";
 
@@ -21,8 +21,9 @@ class _SearchComponentState extends State<SearchComponent> {
 
   @override
   void initState() {
-    focusTextField.addListener(() {
-      setState(() => showIconBack = focusTextField.hasFocus);
+    productController.focusTextField.addListener(() {
+      productController.changeFocusTxtfield();
+      setState(() => showIconBack = productController.txtFiledHasFocus);
     });
     super.initState();
   }
@@ -45,7 +46,7 @@ class _SearchComponentState extends State<SearchComponent> {
                 physics: const NeverScrollableScrollPhysics(),
                 child: GestureDetector(
                   onTap: ()  {
-                    focusTextField.unfocus();
+                    productController.focusTextField.unfocus();
                     productController.cleanProductsFound();
                     setState(() => searchText = "");
                   },
@@ -66,7 +67,7 @@ class _SearchComponentState extends State<SearchComponent> {
                 ),
                 child: TextField(
                   controller: productController.txtSearch,
-                  focusNode: focusTextField,
+                  focusNode: productController.focusTextField,
                   onChanged: (value) => setState(() => searchText = value.trim()),
                   onSubmitted: (value) => productController.search(),
                   style: const TextStyle(

@@ -1,7 +1,7 @@
 import 'package:corelab_app_challenge/src/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-part 'produc_controller.g.dart';
+part 'product_controller.g.dart';
 
 class ProductController = ProductControllerBase with _$ProductController;
 
@@ -18,7 +18,14 @@ abstract class ProductControllerBase with Store {
   @observable
   bool isSearching = false;
 
+  @observable
   TextEditingController txtSearch = TextEditingController();
+
+  @observable
+  FocusNode focusTextField = FocusNode();
+
+  @observable
+  bool txtFiledHasFocus = false;
 
   void search() {
     if (txtSearch.text.trim().isNotEmpty) {
@@ -40,5 +47,9 @@ abstract class ProductControllerBase with Store {
 
   removeItensSearchRecent({required int index}) {
     searchsRecent.removeAt(index);
+  }
+
+  void changeFocusTxtfield() {
+    txtFiledHasFocus = focusTextField.hasFocus;
   }
 }
