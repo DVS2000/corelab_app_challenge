@@ -22,8 +22,11 @@ class _SearchComponentState extends State<SearchComponent> {
   @override
   void initState() {
     productController.focusTextField.addListener(() {
+      
       productController.changeFocusTxtfield();
-      setState(() => showIconBack = productController.txtFiledHasFocus);
+      if(mounted) {
+        setState(() => showIconBack = productController.txtFiledHasFocus);
+      }
     });
     super.initState();
   }

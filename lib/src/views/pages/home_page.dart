@@ -2,6 +2,7 @@ import 'package:corelab_app_challenge/src/controllers/product_controller/product
 import 'package:corelab_app_challenge/src/entities/menu_entity.dart';
 import 'package:corelab_app_challenge/src/views/components/menu_item_component.dart';
 import 'package:corelab_app_challenge/src/views/extensions/size_extension.dart';
+import 'package:corelab_app_challenge/src/views/pages/tabs/category_page.dart';
 import 'package:corelab_app_challenge/src/views/pages/tabs/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         height: context.sizedDevice.height,
         width: context.sizedDevice.width,
-        child: const HomeTab()
+        child: indexMenu == 0 ? const HomeTab() : CategoryTab()
       ),
 
       // FOOTER - MENU
